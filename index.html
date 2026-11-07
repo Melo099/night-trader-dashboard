@@ -27,5 +27,71 @@
 <script>
 document.querySelectorAll('nav button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===button));document.querySelectorAll('main section, .wrap > section').forEach(s=>s.hidden=s.id!==button.dataset.page);window.scrollTo(0,0)}));
 </script>
+
+<script>
+async function updateDashboard() {
+  try {
+    const response = await fetch(
+      "./status.json?t=" + Date.now(),
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error("Statusdaten nicht erreichbar");
+    }
+
+    const data = await response.json();
+
+    const euro = value =>
+      Number(value).toLocaleString("de-DE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }) + " €";
+
+    document.querySelector(".amount").textContent =
+      euro(data.balance);
+
+    document.querySelectorAll(".sub")[0].textContent =
+      (data.profit >= 0 ? "↗ " : "↘ ") +
+      euro(data.profit) + " seit Testbeginn";
+
+    document.querySelectorAll(".two .value")[0].textContent =
+      euro(data.profit);
+
+    document.querySelectorAll(".two .value")[1].textContent =
+      data.position ? "1" : "0";
+
+    const system = document.querySelectorAll(
+      "#overview .card .line strong"
+    );
+
+    system[1].textContent = data.daily_halted ? "Aktiv" : "Aus";
+    system[2].textContent = data.halted ? "Aktiv" : "Aus";
+    system[3].textContent = data.last_processed || "Unbekannt";
+
+    document.querySelector("#trades .empty").textContent =
+      data.position
+        ? "Offene Position: " + data.position
+        : "Aktuell keine offene Position.";
+
+    document.querySelector("#analysis .value").textContent =
+      data.finished ? "Abgeschlossen" : "Nicht beendet";
+
+    document.querySelector(
+      ".note"
+    ).textContent =
+      "Demo-Dashboard · Letzte Aktualisierung: " +
+      new Date(data.updated_at).toLocaleString("de-DE") +
+      " · Nur Paper-Trading.";
+
+  } catch (error) {
+    console.error("Dashboard-Fehler:", error);
+  }
+}
+
+updateDashboard();
+setInterval(updateDashboard, 60000);
+</script>
 </body>
 </html>
+
