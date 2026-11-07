@@ -28,6 +28,14 @@
 <div class="card"><div class="eyebrow">Aktueller Demokontostand</div><div class="amount">100,00 €</div><div class="sub">↗ 0,00 € (0,00 %) seit Testbeginn</div></div>
 <div class="two"><div class="card"><div class="eyebrow">Gewinn / Verlust</div><div class="value green">0,00 €</div></div><div class="card"><div class="eyebrow">Offene Positionen</div><div class="value">0</div></div></div>
 <h2>Kontoverlauf</h2><div class="card"><div class="eyebrow">Letzter bekannter Kontostand: 100 €</div><svg class="chart" viewBox="0 0 320 170" role="img" aria-label="Kontoverlauf bisher unverändert bei 100 Euro"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#70ff9b" stop-opacity=".22"/><stop offset="1" stop-color="#70ff9b" stop-opacity="0"/></linearGradient></defs><path d="M0 70 H320 V170 H0Z" fill="url(#g)"/><path d="M0 70 H320" fill="none" stroke="#70ff9b" stroke-width="3"/><g stroke="#254033" stroke-dasharray="3 6"><path d="M0 25H320M0 120H320"/></g></svg><div class="axis"><span>Start</span><span>Letzter Stand</span></div></div>
+<h2>🤖 Bot-Aktivitäten</h2>
+<div class="card">
+  <div class="eyebrow">Letzte Aktivitäten deines Trading-Bots</div>
+  <div id="activity-list">
+    <div class="empty">Aktivitäten werden geladen ...</div>
+  </div>
+</div>
+
 <h2>Systemstatus</h2><div class="card"><div class="line"><span>Modus</span><strong class="tag">Simulation</strong></div><div class="line"><span>Tagesstopp</span><strong>Aus</strong></div><div class="line"><span>Gesamtsperre</span><strong>Aus</strong></div><div class="line"><span>Letzter Verarbeitungstag</span><strong>06.11.2026</strong></div></div>
 </section>
 <section id="trades" hidden>
@@ -129,6 +137,35 @@ async function updateDashboard() {
     system[3].textContent = data.last_processed || "Unbekannt";
 
     
+    const activityList = document.querySelector("#activity-list");
+    activityList.replaceChildren();
+
+    const activities = Array.isArray(data.activities) ? data.activities : [];
+
+    if (activities.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "Noch keine Bot-Aktivitäten vorhanden.";
+      activityList.appendChild(empty);
+    } else {
+      activities.slice().reverse().slice(0, 15).forEach(activity => {
+        const item = document.createElement("div");
+        item.className = "line";
+
+        const message = document.createElement("span");
+        message.textContent = activity.message || "Bot-Aktivität";
+
+        const time = document.createElement("small");
+        time.style.color = "var(--muted)";
+        time.textContent = activity.time
+          ? new Date(activity.time).toLocaleString("de-DE")
+          : "";
+
+        item.append(message, time);
+        activityList.appendChild(item);
+      });
+    }
+
     const tradeList = document.querySelector("#trade-list");
     tradeList.replaceChildren();
 
