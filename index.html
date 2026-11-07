@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07110e">
+<title>NIGHT TRADER V19</title>
+<style>
+:root{color-scheme:dark;--bg:#07110e;--card:#102019;--line:#254033;--green:#70ff9b;--muted:#9bb3a5}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% -10%,#19472d 0,transparent 35%),var(--bg);color:#f0fff4;font:15px system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:480px;margin:auto;padding:22px 18px 105px}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:27px}.logo{font-size:19px;font-weight:900;letter-spacing:1.6px}.logo span,.green{color:var(--green)}.pill{border:1px solid #2c6842;border-radius:30px;padding:7px 11px;font-size:11px;color:var(--green)}h1{font-size:25px;margin:0 0 5px}p{color:var(--muted);margin:0 0 20px}.card{background:linear-gradient(145deg,#14271d,#0e1c16);border:1px solid var(--line);border-radius:20px;padding:20px;margin:14px 0;box-shadow:0 12px 35px #0002}.eyebrow{color:var(--muted);font-size:12px}.amount{font-size:43px;font-weight:800;margin:8px 0}.sub{color:var(--green);font-size:13px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.two .card{margin:0}.value{font-size:23px;font-weight:800;margin-top:10px}h2{font-size:17px;margin:26px 0 10px}.chart{width:100%;height:170px;margin-top:10px}.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.line:last-child{border:0}.tag{color:var(--green);font-weight:700}.note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:20px}nav{position:fixed;bottom:0;left:0;right:0;background:#0b1913ed;border-top:1px solid var(--line);display:flex;justify-content:center;gap:6px;padding:12px 8px 18px;backdrop-filter:blur(12px)}nav button{background:none;border:0;color:var(--muted);padding:10px 15px;border-radius:12px;font:inherit;cursor:pointer}nav button.active{background:#1b3827;color:var(--green)}section[hidden]{display:none}.empty{padding:24px 10px;text-align:center;color:var(--muted);line-height:1.6}.progress{height:9px;background:#263b2d;border-radius:20px;overflow:hidden;margin:15px 0}.progress i{display:block;background:var(--green);width:0%;height:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">◈ NIGHT <span>TRADER</span> <small style="font-size:10px;color:#8ca99a">V19</small></div><div class="pill">● PAPER TRADING</div></header>
+<section id="overview">
+<h1>Dashboard</h1><p>Dein Trading-Bot auf einen Blick</p>
+<div class="card"><div class="eyebrow">Aktueller Demokontostand</div><div class="amount">100,00 €</div><div class="sub">↗ 0,00 € (0,00 %) seit Testbeginn</div></div>
+<div class="two"><div class="card"><div class="eyebrow">Gewinn / Verlust</div><div class="value green">0,00 €</div></div><div class="card"><div class="eyebrow">Offene Positionen</div><div class="value">0</div></div></div>
+<h2>Kontoverlauf</h2><div class="card"><div class="eyebrow">Letzter bekannter Kontostand: 100 €</div><svg class="chart" viewBox="0 0 320 170" role="img" aria-label="Kontoverlauf bisher unverändert bei 100 Euro"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#70ff9b" stop-opacity=".22"/><stop offset="1" stop-color="#70ff9b" stop-opacity="0"/></linearGradient></defs><path d="M0 70 H320 V170 H0Z" fill="url(#g)"/><path d="M0 70 H320" fill="none" stroke="#70ff9b" stroke-width="3"/><g stroke="#254033" stroke-dasharray="3 6"><path d="M0 25H320M0 120H320"/></g></svg><div class="axis"><span>Start</span><span>Letzter Stand</span></div></div>
+<h2>Systemstatus</h2><div class="card"><div class="line"><span>Modus</span><strong class="tag">Simulation</strong></div><div class="line"><span>Tagesstopp</span><strong>Aus</strong></div><div class="line"><span>Gesamtsperre</span><strong>Aus</strong></div><div class="line"><span>Letzter Verarbeitungstag</span><strong>06.11.2026</strong></div></div>
+</section>
+<section id="trades" hidden><h1>Trades</h1><p>Übersicht deiner simulierten Positionen</p><div class="card empty">Noch keine abgeschlossenen Trades vorhanden.<br>Neue Trades werden nach Anbindung der Bot-Daten hier angezeigt.</div></section>
+<section id="analysis" hidden><h1>Auswertung</h1><p>Dein 7-Tage-Demotest</p><div class="card"><div class="eyebrow">Teststatus</div><div class="value">Nicht beendet</div><div class="progress"><i></i></div><div class="eyebrow">Fortschritt wird nach der Datenanbindung berechnet.</div></div><div class="two"><div class="card"><div class="eyebrow">Bisheriger Gewinn</div><div class="value green">0,00 €</div></div><div class="card"><div class="eyebrow">Startkapital</div><div class="value">100 €</div></div></div></section>
+<div class="note">Demo-Dashboard · Keine echten Börsenaufträge. Die angezeigten Werte stammen aus deinem zuletzt mitgeteilten Protokoll und aktualisieren sich noch nicht automatisch.</div>
+</div>
+<nav aria-label="Navigation"><button class="active" data-page="overview">⌂ Übersicht</button><button data-page="trades">↗ Trades</button><button data-page="analysis">▤ Auswertung</button></nav>
+<script>
+document.querySelectorAll('nav button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===button));document.querySelectorAll('main section, .wrap > section').forEach(s=>s.hidden=s.id!==button.dataset.page);window.scrollTo(0,0)}));
+</script>
+</body>
+</html>
