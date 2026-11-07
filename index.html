@@ -13,6 +13,17 @@
 <div class="wrap">
 <header><div class="logo">◈ NIGHT <span>TRADER</span> <small style="font-size:10px;color:#8ca99a">V19</small></div><div class="pill">● PAPER TRADING</div></header>
 <section id="overview">
+<div class="card" id="test-progress">
+  <div class="eyebrow">7-Tage-Demotest</div>
+  <h2 id="test-day">Testfortschritt wird geladen ...</h2>
+  <div class="progress">
+    <i id="test-progress-bar"></i>
+  </div>
+  <div class="eyebrow" id="test-end">
+    Testende wird geladen ...
+  </div>
+</div>
+
 <h1>Dashboard</h1><p>Dein Trading-Bot auf einen Blick</p>
 <div class="card"><div class="eyebrow">Aktueller Demokontostand</div><div class="amount">100,00 €</div><div class="sub">↗ 0,00 € (0,00 %) seit Testbeginn</div></div>
 <div class="two"><div class="card"><div class="eyebrow">Gewinn / Verlust</div><div class="value green">0,00 €</div></div><div class="card"><div class="eyebrow">Offene Positionen</div><div class="value">0</div></div></div>
@@ -70,6 +81,25 @@ async function updateDashboard() {
     }
 
     const data = await response.json();
+    const testStart = new Date("2026-11-07T14:31:54.875503Z");
+    const testEnd = new Date(testStart.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const now = new Date();
+
+    const elapsed = Math.max(0, now - testStart);
+    const total = testEnd - testStart;
+    const percent = Math.min(100, Math.round(elapsed / total * 100));
+    const day = Math.min(7, Math.floor(elapsed / (24 * 60 * 60 * 1000)) + 1);
+
+    document.querySelector("#test-day").textContent =
+      now >= testEnd ? "Testzeit abgelaufen – 100 %" :
+      "Tag " + day + " von 7 – " + percent + " %";
+
+    document.querySelector("#test-progress-bar").style.width =
+      percent + "%";
+
+    document.querySelector("#test-end").textContent =
+      "Geplantes Testende: " + testEnd.toLocaleString("de-DE");
+
 
     const euro = value =>
       Number(value).toLocaleString("de-DE", {
