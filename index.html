@@ -19,8 +19,37 @@
 <h2>Kontoverlauf</h2><div class="card"><div class="eyebrow">Letzter bekannter Kontostand: 100 €</div><svg class="chart" viewBox="0 0 320 170" role="img" aria-label="Kontoverlauf bisher unverändert bei 100 Euro"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#70ff9b" stop-opacity=".22"/><stop offset="1" stop-color="#70ff9b" stop-opacity="0"/></linearGradient></defs><path d="M0 70 H320 V170 H0Z" fill="url(#g)"/><path d="M0 70 H320" fill="none" stroke="#70ff9b" stroke-width="3"/><g stroke="#254033" stroke-dasharray="3 6"><path d="M0 25H320M0 120H320"/></g></svg><div class="axis"><span>Start</span><span>Letzter Stand</span></div></div>
 <h2>Systemstatus</h2><div class="card"><div class="line"><span>Modus</span><strong class="tag">Simulation</strong></div><div class="line"><span>Tagesstopp</span><strong>Aus</strong></div><div class="line"><span>Gesamtsperre</span><strong>Aus</strong></div><div class="line"><span>Letzter Verarbeitungstag</span><strong>06.11.2026</strong></div></div>
 </section>
-<section id="trades" hidden><h1>Trades</h1><p>Übersicht deiner simulierten Positionen</p><div class="card empty">Noch keine abgeschlossenen Trades vorhanden.<br>Neue Trades werden nach Anbindung der Bot-Daten hier angezeigt.</div></section>
-<section id="analysis" hidden><h1>Auswertung</h1><p>Dein 7-Tage-Demotest</p><div class="card"><div class="eyebrow">Teststatus</div><div class="value">Nicht beendet</div><div class="progress"><i></i></div><div class="eyebrow">Fortschritt wird nach der Datenanbindung berechnet.</div></div><div class="two"><div class="card"><div class="eyebrow">Bisheriger Gewinn</div><div class="value green">0,00 €</div></div><div class="card"><div class="eyebrow">Startkapital</div><div class="value">100 €</div></div></div></section>
+<section id="trades" hidden>
+  <h1>Trades</h1>
+  <p>Übersicht deiner simulierten Käufe und Verkäufe</p>
+  <div id="trade-list">
+    <div class="card empty">Lade Trade-Historie ...</div>
+  </div>
+</section>
+  
+<section id="analysis" hidden>
+  <h1>Auswertung</h1>
+  <p>Dein 7-Tage-Demotest</p>
+
+  <div class="card">
+    <div class="eyebrow">Teststatus</div>
+    <div class="value">Nicht beendet</div>
+    <div class="progress"><i></i></div>
+    <div class="eyebrow">Fortschritt wird später berechnet.</div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <div class="eyebrow">Bisheriger Gewinn</div>
+      <div class="value green">0,00 €</div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Startkapital</div>
+      <div class="value">100 €</div>
+    </div>
+  </div>
+</section>
+
 <div class="note">Demo-Dashboard · Keine echten Börsenaufträge. Die angezeigten Werte stammen aus deinem zuletzt mitgeteilten Protokoll und aktualisieren sich noch nicht automatisch.</div>
 </div>
 <nav aria-label="Navigation"><button class="active" data-page="overview">⌂ Übersicht</button><button data-page="trades">↗ Trades</button><button data-page="analysis">▤ Auswertung</button></nav>
@@ -69,16 +98,50 @@ async function updateDashboard() {
     system[2].textContent = data.halted ? "Aktiv" : "Aus";
     system[3].textContent = data.last_processed || "Unbekannt";
 
-    document.querySelector("#trades .empty").textContent =
-      data.position
-        ? "Offene Position: " + data.position
-        : "Aktuell keine offene Position.";
+    
+    const tradeList = document.querySelector("#trade-list");
+    tradeList.replaceChildren();
 
+    const trades = Array.isArray(data.trades) ? data.trades : [];
+
+    if (trades.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "card empty";
+      empty.textContent = "Noch keine simulierten Käufe oder Verkäufe vorhanden.";
+      tradeList.appendChild(empty);
+    } else {
+      trades.slice().reverse().forEach(trade => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const title = document.createElement("strong");
+        title.textContent = (trade.symbol || "Unbekannt") +
+          " · " + (trade.action || "Trade");
+
+        const details = document.createElement("div");
+        details.className = "note";
+        details.textContent =
+          "Datum: " + (trade.date || "–") +
+          " | Kurs: " + (trade.price || "–") +
+          " | Gewinn/Verlust: " + (trade.profit_loss || "–") +
+          " | Grund: " + (trade.reason || "–");
+
+        card.append(title, details);
+        tradeList.appendChild(card);
+      });
+    }
+
+
+    
     document.querySelector("#analysis .value").textContent =
       data.finished ? "Abgeschlossen" : "Nicht beendet";
 
-    document.querySelector(
-      ".note"
+    document.querySelector("#analysis .two .value").textContent =
+      euro(data.profit);
+
+
+        document.querySelector(
+      ".wrap > .note"
     ).textContent =
       "Demo-Dashboard · Letzte Aktualisierung: " +
       new Date(data.updated_at).toLocaleString("de-DE") +
