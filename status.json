@@ -217,7 +217,37 @@
       "time": "2026-11-08T07:19:44.276556+00:00",
       "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
       "symbol": "XRP"
+    },
+    {
+      "time": "2026-11-08T18:59:20.457158+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
+    },
+    {
+      "time": "2026-11-08T18:59:20.457712+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr BTC",
+      "symbol": "BTC"
+    },
+    {
+      "time": "2026-11-08T18:59:22.683890+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr ETH",
+      "symbol": "ETH"
+    },
+    {
+      "time": "2026-11-08T18:59:24.044597+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
+      "symbol": "SOL"
+    },
+    {
+      "time": "2026-11-08T18:59:25.236847+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr LTC",
+      "symbol": "LTC"
+    },
+    {
+      "time": "2026-11-08T18:59:26.426186+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr XRP",
+      "symbol": "XRP"
     }
   ],
-  "updated_at": "2026-11-08T07:19:44.450918+00:00"
+  "updated_at": "2026-11-08T18:59:27.807872+00:00"
 }
