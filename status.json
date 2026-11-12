@@ -9,36 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-07T17:32:25.068286+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
-      "symbol": "SOL"
-    },
-    {
-      "time": "2026-11-07T17:32:26.253623+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr LTC",
-      "symbol": "LTC"
-    },
-    {
-      "time": "2026-11-07T17:32:27.460433+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr XRP",
-      "symbol": "XRP"
-    },
-    {
-      "time": "2026-11-07T17:43:17.678287+00:00",
-      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
-      "symbol": null
-    },
-    {
-      "time": "2026-11-07T17:43:17.678623+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr BTC",
-      "symbol": "BTC"
-    },
-    {
-      "time": "2026-11-07T17:43:20.060199+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr ETH",
-      "symbol": "ETH"
-    },
-    {
       "time": "2026-11-07T17:43:21.249321+00:00",
       "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
       "symbol": "SOL"
@@ -507,7 +477,37 @@
       "time": "2026-11-12T07:36:23.507082+00:00",
       "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
       "symbol": "XRP"
+    },
+    {
+      "time": "2026-11-12T19:13:25.896050+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
+    },
+    {
+      "time": "2026-11-12T19:13:25.896677+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr BTC",
+      "symbol": "BTC"
+    },
+    {
+      "time": "2026-11-12T19:13:28.289614+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr ETH",
+      "symbol": "ETH"
+    },
+    {
+      "time": "2026-11-12T19:13:29.339635+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
+      "symbol": "SOL"
+    },
+    {
+      "time": "2026-11-12T19:13:30.698952+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr LTC",
+      "symbol": "LTC"
+    },
+    {
+      "time": "2026-11-12T19:13:31.886019+00:00",
+      "message": "Pr\u00fcfe Marktdaten f\u00fcr XRP",
+      "symbol": "XRP"
     }
   ],
-  "updated_at": "2026-11-12T07:36:23.695046+00:00"
+  "updated_at": "2026-11-12T19:13:33.217535+00:00"
 }
