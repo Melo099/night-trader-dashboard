@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-09T07:43:01.929407+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
-      "symbol": "SOL"
-    },
-    {
       "time": "2026-11-09T07:43:03.143387+00:00",
       "message": "Pr\u00fcfe Marktdaten f\u00fcr LTC",
       "symbol": "LTC"
@@ -507,7 +502,12 @@
       "time": "2026-11-14T18:59:36.984481+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-15T07:23:02.153492+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-14T18:59:37.158219+00:00"
+  "updated_at": "2026-11-15T07:23:02.253783+00:00"
 }
