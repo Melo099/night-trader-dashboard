@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-09T07:43:04.338185+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr XRP",
-      "symbol": "XRP"
-    },
-    {
       "time": "2026-11-09T07:43:05.547541+00:00",
       "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
       "symbol": "BTC"
@@ -507,7 +502,12 @@
       "time": "2026-11-15T19:00:19.884755+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-16T09:00:34.058821+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-15T19:00:20.009675+00:00"
+  "updated_at": "2026-11-16T09:00:34.183824+00:00"
 }
