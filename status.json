@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-09T19:11:53.387225+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr BTC",
-      "symbol": "BTC"
-    },
-    {
       "time": "2026-11-09T19:11:55.765204+00:00",
       "message": "Pr\u00fcfe Marktdaten f\u00fcr ETH",
       "symbol": "ETH"
@@ -507,7 +502,12 @@
       "time": "2026-11-19T07:37:50.978079+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-19T19:15:30.360883+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-19T07:37:51.123182+00:00"
+  "updated_at": "2026-11-19T19:15:30.493335+00:00"
 }
