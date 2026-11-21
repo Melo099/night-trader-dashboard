@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-09T19:11:58.168585+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr LTC",
-      "symbol": "LTC"
-    },
-    {
       "time": "2026-11-09T19:11:59.351061+00:00",
       "message": "Pr\u00fcfe Marktdaten f\u00fcr XRP",
       "symbol": "XRP"
@@ -507,7 +502,12 @@
       "time": "2026-11-20T19:17:29.155654+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-21T07:27:57.513200+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-20T19:17:29.297756+00:00"
+  "updated_at": "2026-11-21T07:27:57.610357+00:00"
 }
