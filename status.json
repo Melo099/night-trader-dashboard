@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-10T07:28:23.289648+00:00",
-      "message": "Pr\u00fcfe Marktdaten f\u00fcr ETH",
-      "symbol": "ETH"
-    },
-    {
       "time": "2026-11-10T07:28:24.475981+00:00",
       "message": "Pr\u00fcfe Marktdaten f\u00fcr SOL",
       "symbol": "SOL"
@@ -507,7 +502,12 @@
       "time": "2026-11-22T19:05:56.424352+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-23T07:53:04.913113+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-22T19:05:56.538974+00:00"
+  "updated_at": "2026-11-23T07:53:05.018704+00:00"
 }
