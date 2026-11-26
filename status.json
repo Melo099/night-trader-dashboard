@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-10T07:28:28.089151+00:00",
-      "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
-      "symbol": "SOL"
-    },
-    {
       "time": "2026-11-10T07:28:28.089703+00:00",
       "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
       "symbol": "LTC"
@@ -507,7 +502,12 @@
       "time": "2026-11-25T19:12:16.412020+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-26T07:40:32.536074+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-25T19:12:16.541270+00:00"
+  "updated_at": "2026-11-26T07:40:32.643267+00:00"
 }
