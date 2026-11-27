@@ -9,11 +9,6 @@
   "trades": [],
   "activities": [
     {
-      "time": "2026-11-10T07:28:28.090187+00:00",
-      "message": "Ich warte noch auf eine gute Gelegenheit zum Kaufen.",
-      "symbol": "XRP"
-    },
-    {
       "time": "2026-11-10T19:12:47.674356+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
@@ -507,7 +502,12 @@
       "time": "2026-11-26T19:17:30.942029+00:00",
       "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
       "symbol": null
+    },
+    {
+      "time": "2026-11-27T07:39:10.875307+00:00",
+      "message": "Bot gestartet \u2013 Kontostand: 100.0 EUR",
+      "symbol": null
     }
   ],
-  "updated_at": "2026-11-26T19:17:31.047711+00:00"
+  "updated_at": "2026-11-27T07:39:11.013121+00:00"
 }
